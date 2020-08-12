@@ -8,7 +8,7 @@
 %
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage{url}
-\usepackage{cite}
+\usepackage[biblabel]{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -27,8 +27,6 @@
 % to display URLs in blue roman font according to Springer's eBook style:
 % \renewcommand\UrlFont{\color{blue}\rmfamily}
 
-\usepackage{cite}
-%\renewcommand\cite[1]{[[#1]]}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -318,7 +316,10 @@ In parallel the following investigations will be carried on in LNHU. The work is
 
 
 
-\begin{thebibliography}{99}
+\begin{thebibliography}{999}
+    \makeatletter
+    \def\@biblabel#1{[#1]}
+    \makeatother
     \bibitem{b1} A. Feoktistov, R. Kostromin, I. Sidorov, S. Gorsky, G. Oparin, Multi-agent Algorithm for Re-allocating Grid-resources and Improving Fault-tolerance of Problem-solving Processes, Procedia Computer Science, Vol. 150, 2019, pp. 171-178. DOI:doi.org/10.1016/j.procs.2019.02.034.
     \bibitem{b2} E. A. Cherkashin, I. N. Terehin, V. V. Paramonov and V. S. Tertychniy, "New transformation approach for Model Driven Architecture," 2012 Proceedings of the 35th International Convention MIPRO, Opatija, 2012, pp. 1082-1087.
     \bibitem{b3} E. Cherkashin, A. Shigarov and V. Paramonov, “Representation of MDA Transformation with Logical Objects,” 2019 International Multi-Conference on Engineering, Computer and Information Sciences (SIBIRCON), Novosibirsk, Russia, 2019, pp. 0913-0918, doi: 10.1109/SIBIRCON48586.2019.8958008.
