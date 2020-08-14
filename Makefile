@@ -10,6 +10,7 @@ tlk: $(TLK).pdf
 
 $(TARGET).pdf $(TLK).pdf: %.pdf: %.tex
 	$(LATEXMK) $<
+	$(LATEXMK) $<
 
 clean:
 	BIBINPUTS=$(BIBROOT) $(LATEXMK) -C
