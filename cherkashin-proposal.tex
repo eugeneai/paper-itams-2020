@@ -55,28 +55,28 @@
 
 \begin{document}
 %
-\title{Complex resource-driven discrete-event systems under uncertainty: a new application of [automatic theorem proving]}
+\title{Complex large-scale resource-driven discrete-event systems under uncertainty: an application of automated research}
 %
-\titlerunning{Complex DES, a new application of ATP}
+\titlerunning{Complex large-scale DES under uncertainties: an application of automated research}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
 \author{
 Evgeny~Cherkashin\inst{1} \and
 Qiumei~Cong\inst{2} \and
-Artem~Davydov\inst{1} \and
+Igor~Bychkov\inst{1}
 Nadezhda~Nagul\inst{1} \and
+Artem~Davydov\inst{1} \and
 Yue~Wang\inst{2} \and
 Shi~Huiyuan\inst{2} \and
-Igor~Bychkov\inst{1}
 }
 %
-\authorrunning{Evgeny Cherkashin, Quimey Cong \emph{et al.}} % abbreviated author list (for running head)
+\authorrunning{E. Cherkashin, Q. Cong, I. Bychkov, N. Nagul, A. Davydov, Y. Wang, Sh. Huiyuan} % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
 %\tocauthor{Alexey Shigarov, Vasiliy Khristyuk, and Evgeniy Cherkashin}
 
-\tocauthor{Evgeny Cherkashin, Quimey Cong \emph{et al.}}
+\tocauthor{Evgeny Cherkashin, Quimey Cong, Igor Bychkov \emph{et al.}}
 
 \institute{
 Matrosov Institute for System Dynamics and Control Theory of SB RAS,\\
@@ -140,11 +140,9 @@ Despite widespread and commonly understood essence of the described RBC, GT stat
 
 Alternative approach, which consideration in the context of RBC may have evident reasons, have raised from the artificial intelligence area. It differs from GT by basic representation of the potential activities of the opposing sides and possible ways of application of their capabilities during conflict. This approach is called “multi-agent”, following that every STS is represented as a set of active entities, called agents, operating independently in accordance with their internal logics. Agents form multi-agent system (MAS). In comparison with modern GT models, MAS do not demand explicit representation of action of the opposing sides during conflict. It is sufficient to define implicit logics of action of all agents, comprising MAS, and to construct the initial state of this MAS, \emph{i.e.} set of initial states of its agents. All further behavior of the modeled STS until some final state will be explicated by MAS itself \cite{rbg}.
 
-Analysis of the manufacturing process modeling domain, the primary scientific interest of LNHU\footnote{Liaoning Shihua University}, showed that the object instances are represented as STS. The accuracy of the controlled processes represented as RDDESUs ensuring the prescribed parameters properties in the conflicting environment and internal properties causing uncertainties is the subject of their research. [[ The existence of such control implies the existence of a manufacturing. The RDDESUs have a wide range of other applications in computer networks; resource allocation in computer cloud systems; automated manufacturing; air traffic control; robotic assembly lines; highly integrated command, control, communication, and information systems, \emph{e.g.}, groups of underwater unattended vehicles.]]
+Analysis of the manufacturing process modeling domain, the primary scientific interest of LNHU\footnote{Liaoning Shihua University}, showed that the object instances are represented as STS. The accuracy of the controlled processes represented as RDDESUs ensuring the prescribed parameters properties in the conflicting environment and internal properties causing uncertainties is the subject of their research. Internally uncertainties are mostly the shortage of resources, namely utilities, absence of staff due to illness, equipment fault.  These problems are solved with reserving power, employees, rescheduling batch processing to the equipment used on less prioritized processes.  The amount of the reservation and a set of other activities aimed at preventing occurring internal uncertainties and overcome them is figured out by computer simulation.
 
-% TODO: other uncertainties
-
-Internal uncertainties.....
+Thus, we propose to extend well-established approaches for industrial systems manufacturing processes modeling with game theory and DSS representation, the unknown parameters of the model is figured out in computer simulation based on control synthesis algorithms for DSS.  The simulation processes are organized as theories of first-order logical language of Positively constructed formulas (PCFs) and its theorem proving techniques as the scales of the industrial systems require to automate high-level activities of the object analysis process.
 
 \section{Related works}
 \label{sec:rel-works}
