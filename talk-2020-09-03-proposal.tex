@@ -229,16 +229,47 @@ Shi~Huiyuan}
 \textbf{Using automation is due to the complexity and scale of the problem.}
 \end{frame}
 
-\begin{frame}{Methods and technologies}
-\end{frame}
-
 \begin{frame}{Resource-based games}
 \end{frame}
 
-\begin{frame}{System modeling}
+\begin{frame}
+  \frametitle{System modeling. SysML }
+  \centering
+    \includegraphics[width=1\linewidth]{qms-pics/diagrams.pdf}
+\end{frame}
+\begin{frame}
+  \frametitle{System modeling. Requirements Diagram}
+  \centering
+    \includegraphics[width=0.9\linewidth]{qms-pics/req-ex.png}
+\end{frame}
+\begin{frame}
+  \frametitle{System modeling. Parametric Diagram}
+  \centering
+    \includegraphics[width=0.7\linewidth]{qms-pics/par-ex.png}
+\end{frame}
+\begin{frame}
+  \frametitle{System modeling. BPMN2.0}
+  BPMN -- Business process modeling notation
+  \centering
+    \includegraphics[width=1\linewidth]{qms-pics/bpmn.png}
+\end{frame}
+\begin{frame}
+  \frametitle{System modeling. CMMN1.1}
+  CMMN -- Case management model and notation
+  \centering
+    \includegraphics[width=1\linewidth]{qms-pics/cmmn.png}
 \end{frame}
 
+
 \begin{frame}{Control synthesis}
+  \begin{enumerate}
+  \item DES control is synthesized algorithmically by analysis the controlled automaton. The synthesized control (subautomaton) prevents occurring events shifting system out of admissible state set.
+  \item Modifiers of inference rule the default strategy of PCFs were designed for that purpose. The control is synthesized while making proofs.
+  \item If the synthesis is not possible, it shows structural elements, preventing the synthesis.
+  \item The same was done for language representation of the DSS.
+  \item Decentralized control tested on controlling formations of UAVs.
+  \end{enumerate}
+  Another way is use of forward-chaining inference like receding horizon in RTS mode, where inference stops as soon as time is up.  At each step set of constraint are tested, the admissible states form resulting trajectories and control.
 \end{frame}
 
 \begin{frame}{Discussion: Expected results}
