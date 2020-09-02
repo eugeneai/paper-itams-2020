@@ -229,7 +229,39 @@ Shi~Huiyuan}
 \textbf{Using automation is due to the complexity and scale of the problem.}
 \end{frame}
 
-\begin{frame}{Resource-based games}
+\begin{frame}[fragile]{Resource-based games}
+\noindent  $S=\langle V_0,R,F \rangle,$ where $v_0$ is a multiset, $v_0=\{4\cdot(a,A),8 ⋅ (b, A), 9 ⋅ (c, A),$
+  $6 ⋅ (a, B), 10 ⋅ (b, B), 3 ⋅ (c, B), 12 ⋅ (d, B), 1 ⋅ A\}$.
+
+  \noindent  Rules, defining agents' behavior:\\
+$(r_1^A): \{1 \cdot  A, 2 \cdot  (a, A), 1 \cdot  (b, A)\} → \{−1 \cdot  (a, B), −1 \cdot  (d, B), 1 \cdot  B\},$
+$(r_2^A): \{1 \cdot  A, 1 \cdot  (a, A), 3 \cdot  (b, A)\} → \{−2 \cdot  (a, B), 1 \cdot  B\},$
+$(r_3^A): \{1 \cdot  A, 1 \cdot  (a, A), 2 \cdot  (b, A), 3 \cdot  (c, A)\} → \{−1 \cdot  (b, B), −4 \cdot  (d, B), 1 \cdot  B\},$
+$(r_1^B): \{1 \cdot  B, 3 \cdot  (a, B), 2 \cdot  (b, B)\} → \{−2 \cdot  (a, A), −1 \cdot  (b, A), 1 \cdot  A\},$
+$(r_2^B): \{1 \cdot  B, 3 \cdot  (a, B), 2 \cdot  (b, B)\} → \{−4 \cdot  (c, A), 1 \cdot  A\}.$
+
+\noindent Filter conditions:
+
+\begin{columns}
+    \begin{column}{0.45\linewidth}
+$(C_1^A): (a, A) ≥ 2,$\\
+$(C_2^A): (b, A) ≥ 4,$\\
+$(C_3^A): (c, A) = max,$\\
+$(C_4^A): (d, B) = min,$\\
+$(C 5A ): (b, B) ≤ 2,$\\
+\alert{$F_A = \{C_1^A,\ldots, C_5^A\}$ is A-\bfseries goal}.
+    \end{column}
+    \begin{column}{0.45\linewidth}
+$(C_1^B): (a, B) ≥ 3,$\\
+$(C_2^B): (b, B) ≥ 5,$\\
+$(C_3^B): (c, A) = min,$\\
+$(C_4^B): (b, A) ≤ 3,$\\
+\mbox{$$}\\
+\alert{$F_A = \{C_1^B,\ldots, C_4^B\}$ is B-\bfseries goal.}
+    \end{column}
+  \end{columns}
+\vfill
+\noindent The example is taken from academician Igor Sherement ICCS-DE~2020 paper \url{http://ceur-ws.org/Vol-2638/paper22.pdf}.
 \end{frame}
 
 \begin{frame}
