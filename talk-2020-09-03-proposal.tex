@@ -105,11 +105,11 @@ Shi~Huiyuan}
 
   With the invention of computers, integrated circuits and communications, information and network communication technology are closely combined with industrial process.
 
-  \remph{Industrial systems} (IS) are individual manufacturing and network-computational systems. IS have improved overall operation efficiency and reduced consumption of raw materials.
+  \remph{Industrial systems} (IS) are union of individual manufacturing and network-computational systems. IS have improved overall operation efficiency and reduced consumption of raw materials.
   \begin{description} \color{MidnightBlue}
-  \item[1980] better production quality thanks to improved management,
-  \item[1990] better processes organization (reengineering of business processes),
-  \item[2000] collaborative manufacturing and management the process between counterparties.
+  \item[1980-th] better production quality thanks to improved management,
+  \item[1990-th] better processes organization (reengineering of business processes),
+  \item[2000-th] collaborative manufacturing and management the process between counterparties.
   \end{description}
 
   Due to the large scale of networked systems, it is difficult to realize the traditional centralized control. The nowadays control structures of large-scale networked industrial processes are \remph{decentralized} and \remph{distributed}.  Decentralized control is simpler in structure and more convenient in implementation, but it does not deal with the physical coupling between subsystems.  Distributed control deals with \remph{coupling relationship} through communication between subsystems, the quality of the communication implies the quality of control.
@@ -118,7 +118,7 @@ Shi~Huiyuan}
 
 \begin{frame}{Batch processing}
 
-  There is three basic models of industrial processes: \alert{continuous}, \alert{discrete}, and \alert{batch processing}.  The most complex one is the third the batch processing.
+  There is three basic models of industrial processes: \alert{continuous}, \alert{discrete}, and \alert{batch processing}.  The most complex one is the third, the batch processing.
 
   %\begin{examples}
     \includegraphics[width=0.9\linewidth]{pics/BatchProcessPFD.png}
@@ -196,7 +196,7 @@ Shi~Huiyuan}
 \end{frame}
 
 \begin{frame}{Existing approaches}
-  Aim of control is to retain IS near a \textbf{point set} or correspond to a \textbf{set of constraints}.
+  Aim of control is to retain IS near a \textbf{set point} or correspond to a \textbf{set of constraints}.
   \begin{itemize}
   \item Environment generates events, industry reacts. A set of reacting rules must be synthesized.
   \item Mean field games. Number of agents are infinite, continuous mathematic methods are applied.
@@ -230,7 +230,7 @@ Shi~Huiyuan}
 \end{frame}
 
 \begin{frame}[fragile]{Resource-based games}
-\noindent  $S=\langle V_0,R,F \rangle,$ where $v_0$ is a multiset, $v_0=\{4\cdot(a,A),8 ⋅ (b, A), 9 ⋅ (c, A),$
+\noindent  $S=\langle v_0,R,F \rangle,$ where $v_0$ is a multiset, $v_0=\{4\cdot(a,A),8 ⋅ (b, A), 9 ⋅ (c, A),$
   $6 ⋅ (a, B), 10 ⋅ (b, B), 3 ⋅ (c, B), 12 ⋅ (d, B), 1 ⋅ A\}$.
 
   \noindent  Rules, defining agents' behavior:\\
@@ -246,22 +246,22 @@ $(r_2^B): \{1 \cdot  B, 3 \cdot  (a, B), 2 \cdot  (b, B)\} → \{−4 \cdot  (c,
     \begin{column}{0.45\linewidth}
 $(C_1^A): (a, A) ≥ 2,$\\
 $(C_2^A): (b, A) ≥ 4,$\\
-$(C_3^A): (c, A) = max,$\\
-$(C_4^A): (d, B) = min,$\\
+$(C_3^A): (c, A) \to max,$\\
+$(C_4^A): (d, B) \to min,$\\
 $(C 5A ): (b, B) ≤ 2,$\\
 \alert{$F_A = \{C_1^A,\ldots, C_5^A\}$ is A-\bfseries goal}.
     \end{column}
     \begin{column}{0.45\linewidth}
 $(C_1^B): (a, B) ≥ 3,$\\
 $(C_2^B): (b, B) ≥ 5,$\\
-$(C_3^B): (c, A) = min,$\\
+$(C_3^B): (c, A) \to min,$\\
 $(C_4^B): (b, A) ≤ 3,$\\
 \mbox{$$}\\
 \alert{$F_A = \{C_1^B,\ldots, C_4^B\}$ is B-\bfseries goal.}
     \end{column}
   \end{columns}
 \vfill
-\noindent The example is taken from academician Igor Sherement ICCS-DE~2020 paper \url{http://ceur-ws.org/Vol-2638/paper22.pdf}.
+\noindent The example is taken from Igor Sherement's ICCS-DE~2020 paper \url{http://ceur-ws.org/Vol-2638/paper22.pdf}.
 \end{frame}
 
 \begin{frame}
@@ -323,7 +323,7 @@ LNHU will perform the following activities:
 \item Application of the proposed control techniques in petrochemical processes accounting the uncertainties.
 \end{enumerate}
 
-The produced software aimed at CAE/CAM systems development for IS.
+\noindent\textbf{The software aimed at CAE/CAM systems development for IS.}
 \end{frame}
 
 \begin{frame}{Conclusion}
@@ -342,7 +342,7 @@ The produced software aimed at CAE/CAM systems development for IS.
 \begin{frame}{}
   \vfill
   \centering
-  \Huge Thank You for attention!
+  \Huge \textbf{Thank You for attention!}
   \vfill
 \end{frame}
 
