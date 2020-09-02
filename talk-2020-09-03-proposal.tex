@@ -1,8 +1,7 @@
-\documentclass[10pt]{beamer}
+\documentclass[10pt,dvipsnames]{beamer}
 \usepackage{amsmath,amssymb,longtable,hhline}
 \usepackage{mathrsfs}
 \usepackage{xcolor}
-\usepackage{listings}
 \usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{anyfontsize}
@@ -34,29 +33,6 @@
     urlcolor=blue           % color of external links
 }
 
-\lstset{language=Python,
-  basicstyle=\footnotesize\ttfamily,        % the size of the fonts that are used for the code
-  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
-  captionpos=b,                    % sets the caption-position to bottom
-  commentstyle=\color{mygreen},    % comment style
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-%  frame=single,                    % adds a frame around the code
-  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-  keywordstyle=\color{blue},       % keyword style
-%  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=false,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  stringstyle=\color{mymauve},     % string literal style
-  tabsize=2,                       % sets default tabsize to 2 spaces
-%  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of
-}
 \usepackage{pifont}
 
 \usetheme{Warsaw}
@@ -106,11 +82,14 @@
 
 % --------------------------
 
+\def\remph#1{\textcolor{Mahogany}{\bfseries #1}}
+
 \begin{document}
+\parindent=1em
 \title[Complex large-scale DES under uncertainties: application for automated research]{Complex large-scale resource-driven discrete-event systems under uncertainty: application for automated research}
 \author{
 \def\and{, }
-Evgeny~Cherkashin\and
+\remph{Evgeny~Cherkashin}\and
 Qiumei~Cong\and
 Igor~Bychkov\and
 Nadezhda~Nagul\and
@@ -126,19 +105,112 @@ Shi~Huiyuan}
 
   With the invention of computers, integrated circuits and communications, information and network communication technology are closely combined with industrial process.
 
-  Industrial systems (IS) are individual manufacturing and network-computational systems. IS have improved overall operation efficiency and reduced consumption of raw materials.
-
-  \begin{description}
+  \remph{Industrial systems} (IS) are individual manufacturing and network-computational systems. IS have improved overall operation efficiency and reduced consumption of raw materials.
+  \begin{description} \color{MidnightBlue}
   \item[1980] better production quality thanks to improved management,
   \item[1990] better processes organization (reengineering of business processes),
   \item[2000] collaborative manufacturing and management the process between counterparties.
   \end{description}
 
-Due to the large scale of networked systems, it is difficult to realize the traditional centralized control. The nowadays control structures of large-scale networked industrial processes are \emph{decentralized} and \emph{distributed}.  Decentralized control is simpler in structure and more convenient in implementation, but it does not deal with the physical coupling between subsystems.  Distributed control deals with \emph{coupling relationship} through communication between subsystems, the quality of the communication implies the quality of control.
+  Due to the large scale of networked systems, it is difficult to realize the traditional centralized control. The nowadays control structures of large-scale networked industrial processes are \remph{decentralized} and \remph{distributed}.  Decentralized control is simpler in structure and more convenient in implementation, but it does not deal with the physical coupling between subsystems.  Distributed control deals with \remph{coupling relationship} through communication between subsystems, the quality of the communication implies the quality of control.
 
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Batch processing}
+
+  There is three basic models of industrial processes: \alert{continuous}, \alert{discrete}, and \alert{batch processing}.  The most complex one is the third the batch processing.
+
+  %\begin{examples}
+    \includegraphics[width=0.9\linewidth]{pics/BatchProcessPFD.png}
+
+  %\end{examples}
+
+\noindent The figures are taken from \url{https://en.wikipedia.org/wiki/Scheduling_(production_processes)}
+
+\end{frame}
+
+\begin{frame}[fragile]{Batch processing}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Batch description}
+        \tiny
+\begin{verbatim}
+    Unit Procedure 1: Reaction
+        Op 1: Charge A & B (0.5 hours)
+        Op 2: Blend / Heat (1 hour)
+        Op 3: Hold at 80C for 4 hours
+        Op 4: Pump solution through cooler to
+              blend tank (0.5 hours)
+        Op 5: Clean (1 hour)
+    Unit Procedure 2: Blending Precipitation
+        Op 1: Receive solution from reactor
+        Op 2: Add solvent, D (0.5 hours)
+        Op 3: Blend for 2 hours
+        Op 4: Pump to centrifuge for 2 hours
+        Op 5: Clean up (1 hour)
+    Unit Procedure 3: Centrifugation
+        Op 1: Centrifuge solution for 2 hours
+        Op 2: Clean
+    Unit Procedure 4: Tote
+        Op 1: Receive material from centrifuge
+        Op 2: Load dryer (15 min)
+    Unit Procedure 5: Dry
+        Op 1: Load
+        Op 2: Dry (1 hour)
+\end{verbatim}
+\end{block}
+\end{column}
+\begin{column}{0.5\linewidth}
+    \includegraphics[width=1\linewidth]{pics/BatchCT2.png}
+    \includegraphics[width=1\linewidth]{pics/BatchCT3.png}
+    \includegraphics[width=1\linewidth]{pics/BatchCT4.png}
+\end{column}
+  \end{columns}
+\noindent The figures are taken from \url{https://en.wikipedia.org/wiki/Scheduling_(production_processes)}
+\end{frame}
+
+\begin{frame}{Batch proceedings visualization}
+
+\includegraphics[width=0.7\linewidth]{pics/BatchGantt1.png}
+
+\hfill    \includegraphics[width=0.7\linewidth]{pics/BatchLabor1.png}
+
+    \noindent The figures are taken from \url{https://en.wikipedia.org/wiki/Scheduling_(production_processes)}
+\end{frame}
+
+
+\begin{frame}{Modeling}
+  Representing industrial system as discrete-event system (DES), as some other technical and natural objects, almost always we deal with consumption, production and concurrent temporal acquiring resources.
+
+  Examples of the kind are
+  \begin{enumerate}
+  \item computer networks;
+  \item resource allocation in computer cloud systems;
+  \item automated manufacturing; air traffic control;
+  \item robotic assembly lines;
+  \item highly integrated command, control, communication, and information systems, \emph{e.g.}, groups of underwater unattended vehicles.
+  \end{enumerate}
+
+  \alert{Uncertainties} are classified in \alert{external} and \alert{internal}, \alert{event-based} and \alert{resource-based}.  Uncertainties, as events of DES generated by the environment of the industrial system, can be represented with game theory.  This representation will model the behaviors of external agents (\emph{e.g.} firms, teams, or individuals) under different \alert{competition} and \alert{collaboration} strategies.  Resource-based uncertainties represent usually crshortage of resources (utilities).
+\end{frame}
+
+\begin{frame}{Existing approaches}
+  Aim of control is to retain IS near a \textbf{point set} or correspond to a \textbf{set of constraints}.
+  \begin{itemize}
+  \item Environment generates events, industry reacts. A set of reacting rules must be synthesized.
+  \item Mean field games. Number of agents are infinite, continuous mathematic methods are applied.
+  \item Predictive control, a model-based optimization. Model predicts the future states with \alert{receding horizon} strategy.
+    \begin{itemize}
+     \item \alert{Distributed cooperative control} of relatively
+       independent subsystems. Lowering computational complexity.
+     \item with limited resources and asynchronous coordination.
+     \item with structural uncertainties (equipment failure, illness of staff). Resource reserves are accounted.
+     \end{itemize}
+  \item Fuzzy and neural network methods (blackbox).
+  \end{itemize}
+
+  We propose to represent IS with its environment as DES, which behavior described by resource-based games.  In this case we could apply methods of supervisor control synthesis in addition to the predictive techniques.
 
 \end{frame}
 
@@ -155,15 +227,43 @@ Due to the large scale of networked systems, it is difficult to realize the trad
 \end{enumerate}
 
 \textbf{Using automation is due to the complexity and scale of the problem.}
-
 \end{frame}
 
-\begin{frame}{Large-scale complex Industrial systems}
-
+\begin{frame}{Methods and technologies}
 \end{frame}
 
-\begin{frame}{Large-scale complex Industrial systems}
+\begin{frame}{Resource-based games}
+\end{frame}
 
+\begin{frame}{System modeling}
+\end{frame}
+
+\begin{frame}{Control synthesis}
+\end{frame}
+
+\begin{frame}{Discussion: Expected results}
+\begin{enumerate}
+\item A technique for representation complex of models, data structures.
+\item Adaptation of standard visual notations (UML, SysML, \ldots).
+\item Transformation of the visual models to the internal representation.
+\item Methods of synthesizing supervisors for the DES on the base of automatic theorem proving in PCFs.
+\item Device new techniques of constructive inferences constructions adopted to the subject of research.
+\item Modular automated research software on the base of computer simulation of predictive control with our extensions.
+%\item Techniques of the near-to-real manufacturing process formulation as complex of visual models will be developed.
+%\item An extensive testing on real industrial processes.
+\end{enumerate}
+LNHU will perform the following activities:
+\begin{enumerate}
+\item Research of resource-driven multi-objective optimization: optimal set point and the coordinating multi-objective strategy.
+\item Research of distributed predictive control for RDDESU systems with regards of industrial scale and complexity.
+\item The establishment of visualization model of ethylene and polypropylene production.
+\item Application of the proposed control techniques in petrochemical processes accounting the uncertainties.
+\end{enumerate}
+
+The produced software aimed at CAE/CAM systems development for IS.
+\end{frame}
+
+\begin{frame}{Conclusion}
 \end{frame}
 
 
