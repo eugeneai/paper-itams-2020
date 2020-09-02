@@ -2,7 +2,7 @@
 
 LATEXMK=latexmk -lualatex -latexoption=-shell-escape
 TARGET=cherkashin-proposal
-#TLK=talk-tgr-2019-09-05
+TLK=talk-2020-09-03-proposal
 
 run: $(TARGET).pdf
 
