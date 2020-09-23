@@ -1,4 +1,6 @@
-\documentclass[runningheads]{llncs}
+% \documentclass[runningheads]{llncs}
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
 \usepackage{luatextra}
 \usepackage{currvita}
 %
@@ -51,47 +53,49 @@
 
 \begin{document}
 %
-\title{Complex large-scale resource-driven discrete-event systems under uncertainty: application for automated research}
+\title{Information technologies for supporting research of complex large-scale resource-driven discrete-event systems under uncertainty}
 %
-\titlerunning{Complex large-scale DES under uncertainties: application for automated research}
+%\titlerunning{IT for complex large-scale DES under uncertainties}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
+\def\inst#1{${}^#1$}
 \author{
-Evgeny~Cherkashin\inst{1} \and
+% %\def\and{, }
+\def\and{\unskip, }
+\IEEEauthorblockN{Evgeny~Cherkashin\inst{1} \and
 Qiumei~Cong\inst{2} \and
 Igor~Bychkov\inst{1} \and
 Nadezhda~Nagul\inst{1} \and
 Artem~Davydov\inst{1} \and
 Yue~Wang\inst{2} \and
-Shi~Huiyuan\inst{2}
-}
+Shi~Huiyuan\inst{2}}
 %
-\authorrunning{E. Cherkashin, Q. Cong, I. Bychkov, N. Nagul, A. Davydov, Y. Wang, Sh. Huiyuan} % abbreviated author list (for running head)
+%\authorrunning{E. Cherkashin, Q. Cong, I. Bychkov, N. Nagul, A. Davydov, Y. Wang, Sh. Huiyuan} % abbreviated author list (for running head)
 %
 %%%% list of authors for the TOC (use if author list has to be modified)
 %\tocauthor{Alexey Shigarov, Vasiliy Khristyuk, and Evgeniy Cherkashin}
 
-\tocauthor{Evgeny Cherkashin, Quimey Cong, Igor Bychkov \emph{et al.}}
+%\tocauthor{Evgeny Cherkashin, Quimey Cong, Igor Bychkov \emph{et al.}}
 
-\institute{
-Matrosov Institute for System Dynamics and Control Theory of SB RAS,\\
-134 Lermontov st., Irkutsk, Russia\\
-\and
-Liaoning Shihua University, School of Information and Control Engineering,\\ Fushun, China \\
-\email{eugeneai@icc.ru}%,\\ WWW home page: \texttt{http://td.icc.ru}
+\IEEEauthorblockA{\inst{1}~\textit{Matrosov Institute for System Dynamics and Control Theory of SB RAS}, Irkutsk, Russia\\
+eugeneai@icc.ru}
+\IEEEauthorblockA{\inst{2}~\textit{Liaoning Shihua University, School of Information and Control Engineering,} Fushun, China\\
+cong\_0828@163.com}%,\\ WWW home page: \texttt{http://td.icc.ru}
 }
 %
+
+
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
   The paper states a basic ideas of an approach dealing with uncertainties in models of manufacturing process of an industrial scale. The models are a complex including discrete-event systems (DES) representing the manufacturing schedule and resource-driven game description of its behavior in a competitive multi-agent environment. The model object is a subject of control on various levels. Due to the large scale of the object, the control is synthesized as a result of a logical inference, either a theorem proving or forward-chaining modeling a computer simulation scenarios analysis. The uncertainties appear in the model due to activities of competitors or internal factors having probabilistic nature and represented as internal events or shortage of resources. The synthesized control should ensure that the system corresponds to a set of predefined constraints and/or maximizing/minimizing values of a set of characteristics.
 
 The aim of the research is to implement computer software platform for visual design of industrial manufacturing processes, defining their environments, internal uncertainties event generator rules, and constraints, realizing control syntheses, as well as model assessment criteria to compare the quality of various scenarios. The software could be applied to the wide range of domain problem solved in, \emph{e.g.}, computer networks; resource allocation in computer cloud systems; automated manufacturing; air traffic control; robotic assembly lines; highly integrated command, control, communication, and information systems; control of formations of underwater unattended vehicles.
-
-\keywords{discrete-event systems, control synthesis, resource-driven games, optimal control of dynamical process, automatic theorem proving, manufacturing modeling, automated research}
 \end{abstract}
-
+\begin{IEEEkeywords}
+discrete-event systems, control synthesis, resource-driven games, optimal control of dynamical process, automatic theorem proving, manufacturing modeling, automated research
+\end{IEEEkeywords}
 
 \section*{Introduction}
 \label{sec:intro}
@@ -190,7 +194,7 @@ In the system with structural uncertainty and parameter uncertainty, Li \emph{et
 %     6. development of the technique for representing near-to-the-real manufacturing processes as RDDESU and adaptation of the existing methods of the advanced control of manufacturing process to the RDDESU.
 %     7. specialization and testing the methods and software under development in the field of manufacturing control.
 
-\section{Technologies for the automated research}
+\section{Technologies supporting research}
 \label{sec:methods}
 
 % Научная новизна исследований, обоснование достижимости решения поставленной задачи (задач) и возможности получения предполагаемых результатов / Scientific novelty of the research, proving the achievement of  the solution and the possibility to obtain the suggested result
@@ -344,9 +348,9 @@ The enrichment of the two-level standardized model of manufacturing process with
 The research is being supported by Russian science foundation, grant No. 21-41-00022.
 
 \begin{thebibliography}{999}
-    \makeatletter
-    \def\@biblabel#1{[#1]}
-    \makeatother
+    % \makeatletter
+    % \def\@biblabel#1{[#1]}
+    % \makeatother
 
     \bibitem{rbg} I. Sheremet, Resource-based games. CEUR-WS proceedings, Vol. 2638, Proceedings of the 2nd International Workshop on Information, Computation, and Control Systems for Distributed Environments, Irkutsk, Russia, July 6-7, 2020, pp.~234-251.
     \bibitem{andres} Andrés A. Osorio‐Londoño, Julia C. Naranjo‐Valencia, Gregorio Calderón‐Hernández, Training and its influence on competitive strategy implementation, Human Resource Development Quarterly, 10.1002/hrdq.21381, 31, 2, (149-172), (2019); Ahmed, M.U., Kristal, M.M., Pagell, M. and Gattiker, T.F. (2019), "Building high performance supply-chain relationships for dynamic environments", Business Process Management Journal, Vol. 26 No. 1, pp. 80-101. 10.1108/BPMJ-05-2018-0139
