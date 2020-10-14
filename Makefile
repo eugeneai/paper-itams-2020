@@ -3,8 +3,7 @@
 LATEXMK=latexmk -lualatex -latexoption=-shell-escape
 TARGET=cherkashin-proposal
 
-TLK=talk-2020-09-03-proposal
-# TLK=talk-2020-10-16-RS
+TLK=talk-AIIT-2020-10-16-cherkashin-1
 
 run: $(TARGET).pdf
 
